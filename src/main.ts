@@ -20,20 +20,22 @@ function handlePlaySound(btn: HTMLButtonElement) {
   currentSoundName = name as string;
 }
 
-const soundNames = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
+window.addEventListener("load", function () {
+  const soundNames = ["applause", "boo", "gasp", "tada", "victory", "wrong"];
 
-soundNames.forEach((name) => {
-  const btn = document.createElement("button");
-  btn.classList.add("btn");
-  btn.dataset["sound"] = name;
-  btn.textContent = name;
-  container.append(btn);
-});
+  soundNames.forEach((name) => {
+    const btn = document.createElement("button");
+    btn.classList.add("btn");
+    btn.dataset["sound"] = name;
+    btn.textContent = name;
+    container.append(btn);
+  });
 
-container.addEventListener("click", (event) => {
-  const target = event.target as HTMLElement;
+  container.addEventListener("click", (event) => {
+    const target = event.target as HTMLElement;
 
-  if (target.tagName === "BUTTON") {
-    handlePlaySound(event.target as HTMLButtonElement);
-  }
+    if (target.tagName === "BUTTON") {
+      handlePlaySound(event.target as HTMLButtonElement);
+    }
+  });
 });
