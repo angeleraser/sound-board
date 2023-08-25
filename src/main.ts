@@ -7,9 +7,9 @@ function getAudioElementBy(id: string) {
 
 function handlePlaySound(btn: HTMLButtonElement) {
   if (currentSoundName) {
-    const currentSong = getAudioElementBy(currentSoundName);
-    currentSong.pause();
-    currentSong.currentTime = 0;
+    const currentSound = getAudioElementBy(currentSoundName);
+    currentSound.pause();
+    currentSound.currentTime = 0;
   }
 
   const { sound: name } = btn.dataset;
